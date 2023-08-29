@@ -1,10 +1,8 @@
 package test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ru.netology.data.DataHelper;
 import ru.netology.data.SQLHelper;
 import ru.netology.page.LoginPage;
