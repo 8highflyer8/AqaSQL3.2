@@ -37,5 +37,13 @@ public class SQLHelper {
 
 
     }
+    @SneakyThrows
+    public static String getBlockingUser() {
+        var blockingStatus = "SELECT status FROM users LIMIT 1";
+        var conn = getConn();
+        var result = runner.query(conn, blockingStatus, new ScalarHandler<String>());
+        return result;
+
+    }
 
 }

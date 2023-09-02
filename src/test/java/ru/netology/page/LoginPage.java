@@ -1,6 +1,7 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -23,5 +24,17 @@ public class LoginPage {
         passwordField.setValue(info.getPassword());
         loginButton.click();
         return new VerificationPage();
+    }
+
+    public VerificationPage inValidLogin(DataHelper.AuthInfo info) {
+        loginField.setValue(info.getLogin());
+        passwordField.setValue(DataHelper.generateRandomUser().getPassword());
+        loginButton.click();
+        return new VerificationPage();
+    }
+
+    public void cleanFields() {
+        loginField.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
+        passwordField.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
     }
 }

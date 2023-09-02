@@ -16,13 +16,13 @@ public class VerificationPage {
             codeField.shouldBe(visible);
         }
 
-        public void verifyErrorVerificationPageVisibility() {
-            codeField.shouldBe(visible);
+        public void verifyErrorNotificationVisibility() {
+            errorNotification.shouldBe(visible);
         }
 
-        public DashboardPage validVerify(String verificationCode) {
+        public VerificationPage validVerify(String verificationCode) {
             verify(verificationCode);
-            return new DashboardPage();
+            return new VerificationPage();
         }
      public void verify(String verificationCode){
             codeField.setValue(verificationCode);
