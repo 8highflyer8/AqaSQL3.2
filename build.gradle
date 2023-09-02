@@ -22,7 +22,6 @@ dependencies {
     testImplementation 'com.codeborne:selenide:6.17.1'
 
 
-
 }
 
 test {

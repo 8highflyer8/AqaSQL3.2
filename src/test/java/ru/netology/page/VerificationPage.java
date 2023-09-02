@@ -8,26 +8,27 @@ import static com.google.common.base.Verify.verify;
 
 
 public class VerificationPage {
-        private final SelenideElement codeField = $("[data-test-id=code] input");
-        private final SelenideElement verifyButton = $("[data-test-id=action-verify]");
-        private final SelenideElement errorNotification = $("[data-test-id='error-notification']");
+    private final SelenideElement codeField = $("[data-test-id=code] input");
+    private final SelenideElement verifyButton = $("[data-test-id=action-verify]");
+    private final SelenideElement errorNotification = $("[data-test-id='error-notification']");
 
-        public void verifyVerificationPageVisibility() {
-            codeField.shouldBe(visible);
-        }
+    public void verifyVerificationPageVisibility() {
+        codeField.shouldBe(visible);
+    }
 
-        public void verifyErrorNotificationVisibility() {
-            errorNotification.shouldBe(visible);
-        }
+    public void verifyErrorNotificationVisibility() {
+        errorNotification.shouldBe(visible);
+    }
 
-        public VerificationPage validVerify(String verificationCode) {
-            verify(verificationCode);
-            return new VerificationPage();
-        }
-     public void verify(String verificationCode){
-            codeField.setValue(verificationCode);
-            verifyButton.click();
-        }
+    public VerificationPage validVerify(String verificationCode) {
+        verify(verificationCode);
+        return new VerificationPage();
+    }
 
-        }
+    public void verify(String verificationCode) {
+        codeField.setValue(verificationCode);
+        verifyButton.click();
+    }
+
+}
 

@@ -16,7 +16,7 @@ public class SQLHelper {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app","app", "pass");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
     }
 
     @SneakyThrows
@@ -30,13 +30,14 @@ public class SQLHelper {
     @SneakyThrows
     public static void cleanDataBase() {
         var connection = getConn();
-        runner.execute(connection,"DELETE FROM auth_code");
-        runner.execute(connection,"DELETE FROM card_transactions");
-        runner.execute(connection,"DELETE FROM card");
-        runner.execute(connection,"DELETE FROM users");
+        runner.execute(connection, "DELETE FROM auth_code");
+        runner.execute(connection, "DELETE FROM card_transactions");
+        runner.execute(connection, "DELETE FROM card");
+        runner.execute(connection, "DELETE FROM users");
 
 
     }
+
     @SneakyThrows
     public static String getBlockingUser() {
         var blockingStatus = "SELECT status FROM users LIMIT 1";

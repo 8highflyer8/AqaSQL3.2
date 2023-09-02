@@ -13,8 +13,6 @@ import static ru.netology.data.SQLHelper.cleanDataBase;
 public class BankLoginTest {
 
 
-
-
     @Test
     @DisplayName("Should successfully login to dashboard with exist login and password from sut test data")
     void shouldSuccessfulLogin() {
