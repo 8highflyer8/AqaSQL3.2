@@ -20,9 +20,9 @@ public class VerificationPage {
         errorNotification.shouldBe(visible);
     }
 
-    public VerificationPage validVerify(String verificationCode) {
+    public DashboardPage validVerify(String verificationCode) {
         verify(verificationCode);
-        return new VerificationPage();
+        return new DashboardPage();
     }
 
     public void verify(String verificationCode) {

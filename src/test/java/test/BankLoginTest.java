@@ -23,6 +23,7 @@ public class BankLoginTest {
         var verificationCode = SQLHelper.getVerificationCode();
         verificationPage.validVerify(verificationCode.getCode());
 
+
     }
 
     @Test
@@ -42,7 +43,7 @@ public class BankLoginTest {
         var verificationPage = loginPage.validLogin(AuthInfo);
         verificationPage.verifyVerificationPageVisibility();
         var verificationCode = DataHelper.generateRandomVerificationCode();
-        verificationPage.validVerify(verificationCode.getCode());
+        verificationPage.verify(verificationCode.getCode());
         verificationPage.verifyErrorNotificationVisibility();
 
     }
